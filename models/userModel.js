@@ -19,6 +19,15 @@ const userSchema = new mongoose.Schema(
       min: 6,
       max: 32,
     },
+    profilePicture: {
+      public_id: {
+        type: String,
+      },
+      url: {
+        type: String,
+        // default: "https://res.cloudinary.com/dw2j5lq1w/image/upload/v1629343438/avataaars",
+      },
+    },
     role: {
       type: String,
       default: "user",
