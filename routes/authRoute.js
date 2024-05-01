@@ -1,5 +1,6 @@
 import express from "express";
 import {
+  getProfilePicController,
   loginController,
   registerController,
   requireSignIn,
@@ -24,5 +25,8 @@ router.put("/update-profile", requireSignIn, updateProfileController);
 
 // update profile pic
 router.put("/update-picture", requireSignIn, singleUpload, updateProfilePicController);
+
+// get user profile
+router.get("/profile-picture", requireSignIn, getProfilePicController);
 
 export default router;

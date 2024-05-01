@@ -189,3 +189,25 @@ export const updateProfilePicController = async (req, res) => {
     });
   }
 };
+
+// get user profile controller
+export const getProfilePicController = async (req, res) => {
+  try {
+    // find user
+    const user = await userModel.findById(req.auth._id);
+
+    const profilePictureUrl  = user.profilePicture.url;
+    res.status(200).send({
+      success: true,
+      message: "Profile picture",
+      profilePictureUrl,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Error in getting profile picture",
+      error,
+    });
+  }
+};
