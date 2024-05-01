@@ -99,6 +99,7 @@ export const loginController = async (req, res) => {
     });
     // undefined password
     user.password = undefined;
+    user.profilePicture = undefined;
     res.status(200).send({
       success: true,
       message: "login successfully",
