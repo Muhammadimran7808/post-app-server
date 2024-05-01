@@ -195,7 +195,7 @@ export const updateProfilePicController = async (req, res) => {
 export const getProfilePicController = async (req, res) => {
   try {
     // find user
-    const user = await userModel.findById({ _id: req.params.id });
+    const user = await userModel.findById(req.params.id);
 
     const profilePicture  = user.profilePicture;
     res.status(200).send({
