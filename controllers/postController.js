@@ -58,7 +58,7 @@ export const getAllUserPostController = async (req, res) => {
   try {
     const userPosts = await postModel
       .find({ postedBy: req.auth._id })
-      .populate("postedBy", "_id name")
+      .populate("postedBy", "_id name profilePicture.url")
       .sort({ createdAt: -1 });
     return res.status(200).send({
       success: true,
