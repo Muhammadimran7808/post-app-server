@@ -27,6 +27,6 @@ router.put("/update-profile", requireSignIn, updateProfileController);
 router.put("/update-picture", requireSignIn, singleUpload, updateProfilePicController);
 
 // get user profile
-router.get("/profile-picture", requireSignIn, getProfilePicController);
+router.get("/profile-picture", getProfilePicController);
 
 export default router;
