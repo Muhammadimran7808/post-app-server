@@ -197,11 +197,11 @@ export const getProfilePicController = async (req, res) => {
     // find user
     const user = await userModel.findById(req.auth._id);
 
-    const profilePictureUrl  = user.profilePicture.url;
+    const profilePicture  = user.profilePicture;
     res.status(200).send({
       success: true,
       message: "Profile picture",
-      profilePictureUrl,
+      profilePicture,
     });
   } catch (error) {
     console.log(error);
