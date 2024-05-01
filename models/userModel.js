@@ -25,7 +25,8 @@ const userSchema = new mongoose.Schema(
       },
       url: {
         type: String,
-        // default: "https://res.cloudinary.com/dw2j5lq1w/image/upload/v1629343438/avataaars",
+        default:
+          "https://res.cloudinary.com/muhammadimran/image/upload/v1714547321/default_pic_jkpk8m.png",
       },
     },
     role: {
