@@ -12,7 +12,6 @@ dotenv.config();
 export const requireSignIn = expressjwt({
   secret: process.env.JWT_SECRET,
   algorithms: ["HS256"],
-  expiresIn: "60d",
 });
 
 // --------registor controller-------
@@ -95,9 +94,7 @@ export const loginController = async (req, res) => {
     }
 
     // generate token
-    const token = JWT.sign({ _id: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "2d",
-    });
+    const token = JWT.sign({ _id: user._id }, process.env.JWT_SECRET);
     // undefined password
     user.password = undefined;
     user.profilePicture = undefined;
